@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial=1" charset="utf-8">
+        <title>CSS Tables</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav id="navbar">
+            <header><h2>Cascading Style Sheet Documentation</h2></header>
+            <ul class="nav-bar">
+            <li><a href="#introduction" class="nav-link active">Introduction</a></li>
+            <li><a href="#Simple_Table" class="nav-link active">Simple Table</a></li>
+            <li><a href="#borders" class="nav-link active">Borders</a></li>
+            <li><a href="#width" class="nav-link active">Width</a></li>
+            <li><a href="#alignment" class="nav-link active">Alignment</a></li>
+            <li><a href="#padding" class="nav-link active">Padding</a></li>
+            <li><a href="#Horizontal_dividers" class="nav-link active">Horizontal Dividers</a></li>
+            <li><a href="#Table_Color" class="nav-link active">Table Color</a></li>
+            <li><a href="#Responsive_Table" class="nav-link active">Responsive Table</a></li>
+            </ul>
+        </nav>
+        <br>
+        <br>
+        <main id="main-doc" class="container-fluid">
+            <section class="main-section">
+                <header id="introduction"><h3>Introduction</h3></header>
+                <p>CSS describes how HTML elements are to be displayed on 
+                screen, paper, or in other media. CSS saves a lot of work. 
+                It can control the layout of multiple webpages all at once. It 
+                is used to define styles for webpages, including the design, layout and 
+                variations in display for different devices and screen sizes.</p> 
+                <p>Some CSS properties used for designing tables on a web page include:
+                    <ul>
+                        <li>Borders</li>
+                        <li>Width and Height</li>
+                        <li>Alignment</li>
+                        <li>Padding</li>
+                        <li>Horizontal Dividers</li>
+                        <li>Color</li>
+                        <li>Responsive Table</li>
+                    </ul>
+                </p>
+            </section>
+
+            <section class="main-section"> 
+                <header id="Table_Color"><h3>Simple Table</h3></header>
+                <p>The HTML <code>&lt;table&gt;</code> element allows web authors to display 
+                tabular data (such as text, images, links, other tables, etc) in a 
+                two dimensional table with rows and columns of cells. Each table row is defined with the 
+                &lt;tr&gt; tag. A table header is defined with the &lt;th&gt; tag. By default, table headings are 
+                bold and centered. A table data/cell is defined with the &lt;td&gt; tag.</p>
+                <div class="code">
+                <p><b>Example:</b></p>
+                <pre>
+                    <code>
+                        &lt;table&gt;
+                            &lt;tr&gt;
+                                &lt;th&gt;Heading 1/Column 1&lt;/th&gt;
+                                &lt;th&gt;Heading 2/column 2&lt;/th&gt;
+                            &lt;/tr&gt;
+                            &lt;tr&gt;
+                                &lt;td&gt;Row 1 Data Column 1&lt;/td&gt;
+                                &lt;td&gt;Row 1 Data Column 2&lt;/td&gt;
+                            &lt;/tr&gt;
+                            &lt;tr&gt;
+                                &lt;td&gt;Row 2 Column 1&lt;/td&gt;
+                                &lt;td&gt;Row 2 Column 2&lt;/td&gt;
+                            &lt;/tr&gt;
+                        &lt;/table&gt;
+                    </code>
+                </pre>
+                </div>
+                <p>This will render a <code>&lt;table&gt;</code> consisting of three total rows <code>(&lt;tr&gt;)</code>: one row of header cells
+                <code>(&lt;th&gt;)</code> and two rows of content cells <code>(&lt;td&gt;)</code>. <code>&lt;th&gt;</code> elements are <i>tabular headers</i>
+                and <code>&lt;td&gt;</code> elements are <i>tabular data</i>. You can put whatever you want inside a <code>&lt;td&gt;</code> or <code>&lt;th&gt;</code>.</p>
+                <br>
+                <p><b>Heading 1/Column 1 Heading 2/Column 2</b></p>
+                <p>Row 1 Data Column 1 Row 1 Data Column 2</p>
+                <p>Row 2 Data Column 1 Row 2 Data Column 2</p>
+                <br>
+                <p>The look of an HTML table can be greatly improved with CSS.</p>
+            </section>
+
+            <section class="main-section">
+                <header id="borders"><h3>Borders</h3></header>
+                <p>If you do not specify a border for the table, it will be displayed without borders. A border is set using the 
+                    CSS <code>border</code> property.</p>
+                <p>The table below specifies a black border for <code>&lt;table&gt;</code>, <code>&lt;th&gt;</code> and <code>&lt;td&gt;</code>:</p>
+                <table class="first">
+                    <tr class="first">
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                    </tr>
+                    <tr class="first">
+                        <td>Peter</td>
+                        <td>Griffin</td>
+                    </tr>
+                    <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                    </tr>
+                    <tr>
+                        <td>Andrew</td>
+                        <td>Matthew</td>
+                    </tr>
+                </table>
+
+                <div>
+                <p><b>Example:</b></p>
+                <pre>
+                    <code>
+                        table, th, td {
+                            border: 1px solid black;
+                        }
+                    </code>
+                </pre>
+                </div>
+                <p>Notice that the table in the example above has double borders. This is because both the table and the <code>&lt;th&gt;</code>
+                and <code>&lt;td&gt;</code> elements have seperate borders.</p>
+                <P>The <code>border-collapse</code> property sets whether the table borders should be collapsed into a single border:</P>
+                <table class="second">
+                    <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                    </tr>
+                    <tr>
+                        <td>Peter</td>
+                        <td>Griffin</td>
+                    </tr>
+                    <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                    </tr>
+                    <tr>
+                        <td>Andrew</td>
+                        <td>Matthew</td>
+                    </tr>
+                </table>
+                <d>
+                <p><b>Example:</b></p>
+                <pre>
+                    <code>
+                        table {
+                            border-collapse: collapse;
+                        }
+
+                        table, th, td {
+                            border: 1px solid black;
+                        }
+                    </code> 
+                </pre>
+                </div>
+            </section>
+
+            <section class="main-section">
+                <header id="width"><h3>Width</h3></header>
+                <p>The width and height of a table are defined by the <code>width</code> and <code>height</code> properties.
+                The example below sets the width of the table to 100%, and the height of the <code>&lt;td&gt;</code> elements to 50px:</p>
+                <table class="fourth" style="width: 100%">
+                    <tr style="height: 50px;">
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Savings</th>
+                    </tr>
+                    <tr>
+                        <td>Peter</td>
+                        <td>Griffin</td>
+                        <td>$100</td>
+                    </tr>
+                    <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>$150</td>
+                    </tr>
+                    <tr>
+                        <td>Andrew</td>
+                        <td>Matthew</td>
+                        <td>$300</td>
+                    </tr>
+                </table>
+                <div>
+                <p><b>Example:</b></p>
+                <pre>
+                    <code>
+                        table {
+                            width: 100%;
+                        }
+                        th {
+                            height: 50px;
+                        }
+                    </code>
+                </pre>
+            </div>
+            </section>
+
+            <section class="main-section">
+                <header id="alignment"><h3>Alignment</h3></header>
+                <p>The <code>text-align</code> property sets the horizonyal alignment (like left, right, or center) of the content in 
+                <code>&lt;th&gt;</code> or <code>&lt;td&gt;</code>. By default, the content of <code>&lt;th&gt;</code> elements are center-aligned and the contents of table cells elements are left-aligned.</p>
+                <p>The following example left-aligns the text in <code>&lt;th&gt;</code> elements:</p>
+                <table class="fourth">
+                    <tr class="left">
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Savings</th>
+                    </tr>
+                    <tr>
+                        <td>Peter</td>
+                        <td>Griffin</td>
+                        <td>$100</td>
+                    </tr>
+                    <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>$150</td>
+                    </tr>
+                    <tr>
+                        <td>Andrew</td>
+                        <td>Matthew</td>
+                        <td>$300</td>
+                    </tr>
+                </table>
+                <div>
+                <p><b>Example:</b></p>
+                <pre>
+                    <code>
+                        th {
+                            text-align: left;
+                        }
+                    </code>
+                </pre>
+                </div>
+                <p>The <code>vertical-align</code> property sets the vertical alignment (like top, bottom, or middle) of the 
+                content in table head or table cells. By default, the vertical alignment of the content in a table is middle
+                (for both ,<code>&lt;th&gt;</code> and <code>&lt;td&gt;</code> elements).</p>
+                <p>The following example sets the vertical text alignment to bottom for tabular data elements:</p>
+                <table class="fourth">
+                    <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Savings</th>
+                    </tr>
+                    <tr class="bottom">
+                        <td>Peter</td>
+                        <td>Griffin</td>
+                        <td>$100</td>
+                    </tr>
+                    <tr class="bottom">
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>$150</td>
+                    </tr>
+                    <tr class="bottom">
+                        <td>Andrew</td>
+                        <td>Matthew</td>
+                        <td>$300</td>
+                    </tr>
+                </table>
+                <div>
+                <p><b>Example:</b></p>
+                <pre>
+                    <code>
+                        td {
+                            height: 50px;
+                            vertical-align: bottom;
+                        }
+                    </code>
+                </pre>
+            </div>
+            </section>
+
+            <section class="main-section">
+                <header id="padding"><h3>Padding</h3></header>
+                <p>To control the space between the border and the content in a table, use the <code>padding</code> property
+                on <code>&lt;td&gt;</code> and <code>&lt;th&gt;</code> elements:</p>
+                <table class="fifth">
+                    <tr class="pad">
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Savings</th>
+                    </tr>
+                    <tr class="pad">
+                        <td>Peter</td>
+                        <td>Griffin</td>
+                        <td>$100</td>
+                    </tr>
+                    <tr class="pad">
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>$150</td>
+                    </tr>
+                    <tr class="pad">
+                        <td>Andrew</td>
+                        <td>Matthew</td>
+                        <td>$300</td>
+                    </tr>
+                </table>
+                <div>
+                <p><b>Example:</b></p>
+                <pre>
+                    <code>
+                        td, th {
+                            padding: 15px;
+                            text-align: left;
+                        }
+                    </code>
+                </pre>
+            </div>
+            </section>
+
+            <section class="main-section">
+                <header id="Horizontal_dividers"><h3>Horizontal Dividers</h3></header>
+                <br>
+                <table class="sixth">
+                    <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Savings</th>
+                    </tr>
+                    <tr>
+                        <td>Peter</td>
+                        <td>Griffin</td>
+                        <td>$100</td>
+                    </tr>
+                    <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>$150</td>
+                    </tr>
+                    <tr>
+                        <td>Andrew</td>
+                        <td>Matthew</td>
+                        <td>$300</td>
+                    </tr>
+                </table>
+                <div>
+                <p>Add the <code>border-bottom</code> property to <code>&lt;th&gt;</code> and <code>&lt;td&gt;</code> for horizontal dividers</p>
+                <p><b>Example:</b></p>
+                <pre>
+                    <code>
+                        th, td {
+                            border-bottom: 1px solid lightcoral;
+                        }
+                    </code>
+                </pre>
+            </div>
+            </section>
+
+            <section class="main-section">
+                <header id="color"><h3>Color</h3></header>
+                <p>The example below specifies the background color and text color of <code>&lt;th&gt;</code> elements.</p>
+                <br>
+                <table class="seventh">
+                    <tr class="color seventh">
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Savings</th>
+                    </tr>
+                    <tr class="seventh">
+                        <td>Peter</td>
+                        <td>Griffin</td>
+                        <td>$100</td>
+                    </tr>
+                    <tr class="seventh">
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>$150</td>
+                    </tr>
+                    <tr class="seventh">
+                        <td>Andrew</td>
+                        <td>Matthew</td>
+                        <td>$300</td>
+                    </tr>
+                </table>
+            </section>
+            <br>
+            
+            <section class="main-section">
+                <header id="Responsive_Table"><h3>Responsive Table</h3></header>
+            <p>A responsive table will display a horizontal scroll bar if the screen is too small to display the full content:</p>
+            <br>
+            <div style="overflow-x:auto;">
+            <table class="eight seventh">
+                    <tr class="eight">
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Savings</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                        <th>Points</th>
+                    </tr>
+                    <tr class="eight">
+                        <td>Peter</td>
+                        <td>Griffin</td>
+                        <td>$100</td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td>50</td>
+                    </tr>
+                    <tr class="eight">
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>$150</td>
+                        <td>94</td>
+                        <td>94</td>
+                        <td>94</td>
+                        <td>94</td>
+                        <td>94</td>
+                        <td>94</td>
+                        <td>94</td>
+                        <td>94</td>
+                        <td>94</td>
+                        <td>94</td>
+                        <td>94</td>
+                        <td>94</td>
+                        <td>94</td>
+                        <td>94</td>
+                    </tr>
+                    <tr class="eight">
+                        <td>Andrew</td>
+                        <td>Matthew</td>
+                        <td>$300</td>
+                        <td>67</td>
+                        <td>67</td>
+                        <td>67</td>
+                        <td>67</td>
+                        <td>67</td>
+                        <td>67</td>
+                        <td>67</td>
+                        <td>67</td>
+                        <td>67</td>
+                        <td>67</td>
+                        <td>67</td>
+                        <td>67</td>
+                        <td>67</td>
+                        <td>67</td>
+                    </tr>
+                </table>
+                </div>
+        	<div class="code">
+        	<p><b>Example:</b></p>
+        	<pre>
+        		<code>
+        			&lt;div style="overflow-x:auto;"&gt;
+        				&lt;table&gt;
+        					... 
+        				&lt;/table&gt;
+        			&lt;/div&gt;
+        		</code>
+        	</pre>
+        	</div>
+        </section>
+        </main>
+    </body>
+</html>
